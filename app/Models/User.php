@@ -42,3 +42,5 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 }
+$user = User::find(1);
+$token = $user->createToken('token-name')->plainTextToken;
