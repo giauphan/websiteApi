@@ -21,8 +21,8 @@
 </head>
 
 <body>
-    <div style="position: fixed;width: 100%;">
-        <nav class="navbar navbar-expand-lg" style="background-color: #7852a9;">
+    <div>
+        <nav class="navbar navbar-expand-lg fixed-top" style="background-color: #7852a9;">
             <div class="container-fluid">
                 <a class="navbar-brand" href="{{route('home')}}">
                     <img width="40px" height="40px" src="/images/logo.png" alt="">
