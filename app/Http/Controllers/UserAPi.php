@@ -10,37 +10,39 @@ class UserAPi extends Controller
     {
         return view('usertoapi');
     }
-    public function sumbitapi(Request $request)
-    {
-        // Set the API endpoint URL
-        $url = 'http://localhost:8000/api/process-file';
 
-        // Get the uploaded file from the form data
-        $data = ['file' => $request->file('file')];
+    // public function sumbitapi(Request $request)
+    // {
+    //     // Set the API endpoint URL
+    //     $url = 'http://localhost:8000/api/process-file';
 
-        // Set any required headers
-        $headers = ['Authorization: Bearer <token>'];
+    //     // Get the uploaded file from the form data
+    //     $data = ['file' => $request->file('file')];
 
-        // Initialize cURL and set options
-        $ch = curl_init();
-        curl_setopt($ch, CURLOPT_URL, $url);
-        curl_setopt($ch, CURLOPT_POST, true);
-        curl_setopt($ch, CURLOPT_POSTFIELDS, $data);
-        curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
-        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+    //     // Set any required headers
+    //     $headers = ['Authorization: Bearer <token>'];
 
-        // Send the request and receive the response
-        $response = curl_exec($ch);
+    //     // Initialize cURL and set options
+    //     $ch = curl_init();
+    //     curl_setopt($ch, CURLOPT_URL, $url);
+    //     curl_setopt($ch, CURLOPT_POST, true);
+    //     curl_setopt($ch, CURLOPT_POSTFIELDS, $data);
+    //     curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
+    //     curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
 
-        // Close cURL
-        curl_close($ch);
+    //     // Send the request and receive the response
+    //     $response = curl_exec($ch);
 
-        // Parse the JSON response
-        $json_data = json_decode($response, true);
+    //     // Close cURL
+    //     curl_close($ch);
 
-        // Use the JSON data in your application
-        $status = $json_data['status'];
-        $output = $json_data['output'];
-        echo  $status ;
-    }
+    //     // Parse the JSON response
+    //     $json_data = json_decode($response, true);
+
+    //     // Use the JSON data in your application
+    //     $status = $json_data['status'];
+    //     $output = $json_data['output'];
+    //     echo  $status ;
+    // }
+    
 }

@@ -6,7 +6,10 @@
 </head>
 <body>
     <pre>
-        {{ json_encode($output, JSON_UNESCAPED_UNICODE | JSON_PRETTY_PRINT) }}
+        {{ json_encode($jsonData, JSON_UNESCAPED_UNICODE | JSON_PRETTY_PRINT) }}
+    </pre>
+    <pre>
+        {{ print_r($arr) }}
     </pre>
 </body>
 </html>
