@@ -3,12 +3,16 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+
  use Illuminate\Support\Facades\Auth;
 use Laravel\Sanctum\HasApiTokens;
 
 class LoginController extends Controller
 {
     use HasApiTokens;
+
+
+
     /**
      * Display a listing of the resource.
      *
@@ -18,6 +22,7 @@ class LoginController extends Controller
     {
         return view('login');
     }
+
    
     
     //     public function login(Request $request)
@@ -40,6 +45,7 @@ class LoginController extends Controller
     //     }
     
     
+
     /**
      * Show the form for creating a new resource.
      *

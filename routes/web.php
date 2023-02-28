@@ -1,25 +1,26 @@
 <?php
-
-
+//convert
 use App\Http\Controllers\ConversionController;
 use App\Http\Controllers\PdfToexcelController;
 use App\Http\Controllers\pdftxt;
-use App\Http\Controllers\UserAPi;
-
-use App\Http\Controllers\ChangePasswordController;
 use App\Http\Controllers\FileController;
+
+// giao dien
+use App\Http\Controllers\ChangePasswordController;
 use App\Http\Controllers\ForgotPasswordController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\SignUpController;
-
+// api
+use App\Http\Controllers\UserAPi;
 use Illuminate\Support\Facades\Route;
 
 
 Route::get('/', function () {
     return view('welcome');
 });
+
 
 Route::get('/login', [LoginController::class, 'index']);
 
