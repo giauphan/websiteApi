@@ -42,7 +42,11 @@ class pdftxt extends Controller
         $data = [];
         // // Loop through each line and extract the data
         //1
+        $key_arr = [['vietnamese', 'foreign', 'abbreviation'], ['tax_code'], ['establishment_date'], ['address', 'phone', 'fax', 'Email', 'website'], ['main_industry_code', 'industry_code'], ['charter_capital'], ['owner_info', 'full_name', 'sex', 'dayofbirthday', 'ethnicity', 'nationality', 'legal_document_type', 'legal_document_number', 'legal_document_date', 'legal_document_place', 'permanent_address', 'contact_address'], ['legal_representative', 'full_name', 'sex', 'position', 'dayofbirthday', 'ethnicity', 'nationality', 'legal_document_type', 'legal_document_number', 'legal_document_date', 'legal_document_place', 'permanent_address', 'contact_address'], ['registration_office']];
         $group = 'company_name';
+        $key = '';
+        $group_arr = ['company_name', 'tax_code', 'establishment_date', 'headquarters_address', 'business_lines', 'charter_capital', 'owner_info', 'legal_representative', 'registration_office'];
+
         $pattern = '/\d+\.\s+/'; // matches digits followed by a dot and one or more spaces
         $replacement = ''; // replace with empty string
         for ($i =  0; $i < sizeof($dataArray); $i++) {
@@ -51,11 +55,11 @@ class pdftxt extends Controller
             if (strpos($line, ':') !== false) {
                 if (strpos($line, 'Mã số doanh nghiệp') !== false) {
                     break;
+
                 } else {
                     $parts = explode(':', $line, 2);
-                    if (is_numeric(Str::slug(pathinfo(trim($line), PATHINFO_FILENAME), '_'))) {
-                        $cleanText = preg_replace($pattern, $replacement, $text);
-                        $group =      $cleanText;
+                    if (strpos($line, '. ') !== false) {
+                        $group =   $group_arr[Str::slug(pathinfo(trim($line), PATHINFO_FILENAME), '_') * 1 - 1];
                     }
                     // Split the line into key and value
 
@@ -76,16 +80,17 @@ class pdftxt extends Controller
                     $line = trim($dataArray[$i]);
                     // Check if the line contains a colon (':')
                     if (strpos($line, ':') !== false) {
-                        if (strpos($line, 'Người đại diện theo pháp luật') !== false) {
-                            break;
-                        } else if (strpos($line, 'Vốn điều lệ') !== false || strpos($line, 'Ngành, nghề kinh doanh') !== false || strpos($line, 'Ngày thành lập') !== false || strpos($line, 'Mã số doanh nghiệp') !== false) {
+                        // if (strpos($line, 'Người đại diện theo pháp luật') !== false) {
+                        //     break;
+                        // } else 
+                        if (strpos($line, 'Vốn điều lệ') !== false || strpos($line, 'Ngành, nghề kinh doanh') !== false || strpos($line, 'Ngày thành lập') !== false || strpos($line, 'Mã số doanh nghiệp') !== false || strpos($line, 'Chi tiết') !== false) {
                             continue;
                         } else {
                             $parts = explode(':', $line, 2);
                             if (is_numeric(Str::slug(pathinfo(trim($line), PATHINFO_FILENAME), '_'))) {
                                 if (strpos($line, '. ') !== false) {
-                                    $cleanText = preg_replace($pattern, $replacement, $dataArray[$i]);
-                                    $group =   Str::slug(pathinfo($cleanText, PATHINFO_FILENAME), '_');
+                                    $group =   $group_arr[Str::slug(pathinfo(trim($line), PATHINFO_FILENAME), '_') * 1 - 1];
+                                    $key = '';
                                 }
                             }
                             // Split the line into key and value
@@ -132,46 +137,7 @@ class pdftxt extends Controller
             }
         }
         // end table
-        // legal representative 
-        for ($i =  0; $i < sizeof($dataArray); $i++) {
-            $line = trim($dataArray[$i]);
-            if (strpos($line, 'Người đại diện theo pháp luật') !== false) {
-                $position = $i;
 
-                for ($i =  $position; $i < sizeof($dataArray); $i++) {
-                    $line = trim($dataArray[$i]);
-                    // Check if the line contains a colon (':')
-                    if (strpos($line, ':') !== false) {
-                        if (strpos($arr, 'Người đại diện theo pháp luật') !== false) {
-                            continue;
-                        }
-
-                        $parts = explode(':', $line, 2);
-                        if (is_numeric(Str::slug(pathinfo(trim($line), PATHINFO_FILENAME), '_'))) {
-                            if (strpos($line, '. ') !== false) {
-
-                                $cleanText = preg_replace($pattern, $replacement, $line);
-                                $group =   Str::slug(pathinfo($cleanText, PATHINFO_FILENAME), '_');
-                            }
-                        }
-                        // Split the line into key and value
-                        $key = preg_replace($pattern, $replacement, trim($parts[0]));
-                        if (strpos($dataArray[$i + 1], ':') !== false) {
-                            $value = trim($dataArray[$i]);
-                        } else    if (strpos($dataArray[$i + 2], ':') !== false) {
-                            $value = trim($dataArray[$i]) . " " . trim($dataArray[$i + 1]);
-                        } else {
-                            $value = trim($dataArray[$i]) . " " . trim($dataArray[$i + 1]) . " " . trim($dataArray[$i + 2]);;
-                        }
-                        $legal_representative = explode(':', $value);
-                        if (sizeof($legal_representative) >= 2) {
-                            $data[$group][Str::slug(pathinfo($key, PATHINFO_FILENAME), '_')] =  trim($legal_representative[1]);
-                        }
-                    }
-                }
-            }
-        }
-        //end owner info legal representative
         // data can xu bat ng tat
         // xu ly mục 1 -4 and 6 
         for ($i = 0; $i < sizeof($dataArray); $i++) {
