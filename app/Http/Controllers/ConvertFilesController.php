@@ -4,18 +4,41 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-class SignUpController extends Controller
+class ConvertFilesController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function Signup()
+    public function PDFtoWord()
     {
-       return view('signup');
+        return view('Page_Convert.PDFtoWord');
     }
-
+    public function WordtoPDF()
+    {
+        return view('Page_Convert.WordtoPDF');
+    }
+    public function PDFtoExcel()
+    {
+        return view('Page_Convert.PDFtoExcel');
+    }
+    public function ExceltoPDF()
+    {
+        return view('Page_Convert.ExceltoPDF');
+    }
+    public function PDFtoPPT()
+    {
+        return view('Page_Convert.PDFtoPPT');
+    }
+    public function PPTtoPDF()
+    {
+        return view('Page_Convert.PPTtoPDF');
+    }
+    public function DownLoadFIle()
+    {
+        return view('download_file');
+    }
     /**
      * Show the form for creating a new resource.
      *

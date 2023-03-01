@@ -66,7 +66,7 @@ function uploadFile(file){
     li.classList.add('in-prog')
     li.innerHTML = `
         <div class="col">
-            <img src="icons/${iconSelector(file.type)}" alt="">
+            <img style="width:40px;height:40px;margin-top:10px" src="icons/${iconSelector(file.type)}" alt="">
         </div>
         <div class="col">
             <div class="file-name">

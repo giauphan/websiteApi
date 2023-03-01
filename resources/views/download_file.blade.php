@@ -91,46 +91,18 @@
             </div>
         </nav>
     </div>
-    <div>
-        <div class="">
-            @yield('body')
-        </div>
-        <div class="container text-center" style="margin-top: 50px;margin-bottom: 100px;">
-            <p style="font-size: 30px;color:black">Convert Files</p>
-            <div class="" style="display: flex;justify-content: center;margin-bottom: 10px;">
-                <div class="mr-3">
-                    <a class="btn btn-light shadow-sm" style="border-radius: 10px;width: 200px; height: 60px;padding-top: 15px;" href="{{route('pdftoword')}}">
-                        <img src="/icons/vnd.openxmlformats-officedocument.wordprocessingml.document.png" style="width: 30px;height: 30px;" alt="">
-                        PDF to Word</a>
-                </div>
-                <div class="mr-3">
-                    <a class="btn btn-light shadow-sm" style="border-radius: 10px;width: 200px; height: 60px;padding-top: 15px;" href="{{route('wordtopdf')}}">
-                        <img src="/icons/pdf.png" style="width: 30px;height: 30px;" alt="">
-                        Word to PDF</a>
-                </div>
-                <div class="mr-3">
-                    <a class="btn btn-light shadow-sm" style="border-radius: 10px;width: 200px; height: 60px;padding-top: 15px;" href="{{route('pdftoppt')}}">
-                        <img src="/icons/vnd.openxmlformats-officedocument.presentationml.presentation.png" style="width: 30px;height: 30px;" alt="">
-                        PDF to PPT</a>
-                </div>
-                <div class="mr-3">
-                    <a class="btn btn-light shadow-sm" style="border-radius: 10px;width: 200px; height: 60px;padding-top: 15px;" href="{{route('ppttopdf')}}">
-                        <img src="/icons/pdf.png" style="width: 30px;height: 30px;" alt="">
-                        PPT to PDF</a>
-                </div>
-                <div class="mr-3">
-                    <a class="btn btn-light shadow-sm" style="border-radius: 10px;width: 200px; height: 60px;padding-top: 15px;" href="{{route('pdftoexcel')}}">
-                        <img src="/icons/vnd.ms-excel.png" style="width: 30px;height: 30px;" alt="">
-                        PDF to Excel</a>
-                </div>
-                <div class="mr-3">
-                    <a class="btn btn-light shadow-sm" style="border-radius: 10px;width: 200px; height: 60px;padding-top: 15px;" href="{{route('exceltopdf')}}">
-                        <img src="/icons/pdf.png" style="width: 30px;height: 30px;" alt="">
-                        Excel to PDF</a>
-                </div>
-            </div>
+
+    <div style="padding-top: 100px;margin-bottom: 100px;" class="">
+        <div class="containert">
+            <a style="width: 400px;height: 100px;border-radius: 10px;margin-top: 50px;font-size: 20px;padding-top: 20px;background-color: #ff9aa2;color:black" class="btn btn-danger shadow" href="">
+                Download File
+                <i style="margin-left: 5px" class="fa-solid fa-download"></i>
+                <p style="color:black">Tên file .doc</p>
+            </a>
         </div>
     </div>
+
+
     <style>
         .ul {
             text-align: center;
@@ -214,7 +186,7 @@
     <div style="display: flex;justify-content: center;">
         <div class="footer-left">
 
-            <img width="200px" height="200px" src="/images/logo.png" alt="">
+            <img width="200px" height="200px" style="" src="/images/logo.png" alt="">
 
             <p class="" style="color:white">Công ty TNHH T4TEK © 2022</p>
         </div>

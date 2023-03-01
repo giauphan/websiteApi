@@ -1,6 +1,9 @@
 body {
   font-family: "Roboto", sans-serif;
   background-color: #f8fafb; }
+  body::-webkit-scrollbar{
+    width:0px;
+  }
 
 p {
   color: #b3b3b3;

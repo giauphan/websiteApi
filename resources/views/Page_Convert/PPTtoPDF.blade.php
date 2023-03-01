@@ -4,6 +4,19 @@
 <div style="padding-top: 100px;" class="">
     <div class="containert">
         <div class="header-section">
+            <div class="container overflow-hidden text-center">
+                <div class="row gx-5">
+                    <div class="col">
+                        <div>PPT</div>
+                    </div>
+                    <div class="col">
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </div>
+                    <div class="col">
+                        <div>PDF</div>
+                    </div>
+                </div>
+            </div>
         </div>
         <div class="drop-section">
             <div class="col">
@@ -21,6 +34,7 @@
         </div>
         <div class="list-section">
             <div class="list-title">Uploaded Files</div>
+            <div>Dinh</div>
             <div class="list"></div>
         </div>
     </div>
