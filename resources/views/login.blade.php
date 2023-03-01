@@ -92,13 +92,13 @@
         <div style="display: flex;">
             <div class="" style="width: 250px;margin-top: 20px;">
 
-                <img width="200px" height="200px" style="" src="/images/logo.png" alt="">
+                <img width="200px" height="200px" src="/images/logo.png" alt="">
 
                 <p class="" style="color:white">Công ty TNHH T4TEK © 2022</p>
             </div>
 
             <div class="" style="color:white;width: 450px;margin: 55px 200px 0 200px;">
-                <div class="" style="">
+                <div>
                     <p style="color:white"><i class="fa-solid fa-location-dot" style="margin-right: 5px;"></i>L18-11-13, Tầng 18 Tòa nhà Vincom Center Đồng Khởi, Số 72 Lê Thánh Tôn, Phường Bến Nghé, Quận 1, Thành phố Hồ Chí Minh</p>
                 </div>
                 <div style="margin-bottom: 20px;">

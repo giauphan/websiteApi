@@ -211,7 +211,7 @@
     <div style="display: flex;justify-content: center;">
         <div class="footer-left">
 
-            <img width="200px" height="200px" style="" src="/images/logo.png" alt="">
+            <img width="200px" height="200px" src="/images/logo.png" alt="">
 
             <p class="" style="color:white">Công ty TNHH T4TEK © 2022</p>
         </div>
