@@ -14,8 +14,7 @@
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <!-- Style -->
     <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/styless.css">
-    <!-- dropdown -->
+    <link rel="stylesheet" href="css/styless.css"> <!-- dropdown -->
     <title>Convert Files</title>
 </head>
 
@@ -23,67 +22,22 @@
     <div>
         <nav class="navbar navbar-expand-lg fixed-top" style="background-color: #333333;">
             <div class="container-fluid">
-                <a class="navbar-brand" href="{{route('pdftoword')}}">
+                <a class="navbar-brand" href="">
                     <img width="40px" height="40px" src="/images/logo.png" alt="">
                 </a>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                         <li class="nav-item">
-                            <a style="color: white;" class="nav-link active" aria-current="page" href="{{ route('pdftoword') }}">Home</a>
+                            <a style="color: white;" class="nav-link active" aria-current="page" href="">Home</a>
                         </li>
-                        <li style="margin-left: 34px;" class="nav-item">
+                        <li class="nav-item">
                             <a style="color: white;" class="nav-link" href="{{ route('profile')}}">Profile</a>
                         </li>
-
-                        <!-- dropdown -->
-
-                        <ul class="ul">
-                            <li class="li">
-                                <a class="a" style="color:white;" href="#">Convert
-                                    <i style="margin-left: 5px;" class="fa-solid fa-chevron-down"></i>
-                                </a>
-                                <ul style="margin-top: 13px;" class="submenu ul shadow">
-                                    <!-- in dropdown -->
-                                    <div class="" style="display: flex;justify-content: center;margin:40px 0 0 0">
-                                        <div class="mr-3">
-                                            <a class="btn btn-light shadow-sm" style="border-radius: 10px;width: 200px; height: 60px;padding-top: 15px;" href="{{route('pdftoword')}}">
-                                                <img src="/icons/vnd.openxmlformats-officedocument.wordprocessingml.document.png" style="width: 30px;height: 30px;" alt="">
-                                                PDF to Word</a>
-                                        </div>
-                                        <div class="mr-3">
-                                            <a class="btn btn-light shadow-sm" style="border-radius: 10px;width: 200px; height: 60px;padding-top: 15px;" href="{{route('wordtopdf')}}">
-                                                <img src="/icons/pdf.png" style="width: 30px;height: 30px;" alt="">
-                                                Word to PDF</a>
-                                        </div>
-                                        <div class="mr-3">
-                                            <a class="btn btn-light shadow-sm" style="border-radius: 10px;width: 200px; height: 60px;padding-top: 15px;" href="{{route('pdftoppt')}}">
-                                                <img src="/icons/vnd.openxmlformats-officedocument.presentationml.presentation.png" style="width: 30px;height: 30px;" alt="">
-                                                PDF to PPT</a>
-                                        </div>
-                                        <div class="mr-3">
-                                            <a class="btn btn-light shadow-sm" style="border-radius: 10px;width: 200px; height: 60px;padding-top: 15px;" href="{{route('ppttopdf')}}">
-                                                <img src="/icons/pdf.png" style="width: 30px;height: 30px;" alt="">
-                                                PPT to PDF</a>
-                                        </div>
-                                        <div class="mr-3">
-                                            <a class="btn btn-light shadow-sm" style="border-radius: 10px;width: 200px; height: 60px;padding-top: 15px;" href="{{route('pdftoexcel')}}">
-                                                <img src="/icons/vnd.ms-excel.png" style="width: 30px;height: 30px;" alt="">
-                                                PDF to Excel</a>
-                                        </div>
-                                        <div class="mr-3">
-                                            <a class="btn btn-light shadow-sm" style="border-radius: 10px;width: 200px; height: 60px;padding-top: 15px;" href="{{route('exceltopdf')}}">
-                                                <img src="/icons/pdf.png" style="width: 30px;height: 30px;" alt="">
-                                                Excel to PDF</a>
-                                        </div>
-                                    </div>
-                                    <!-- end in dropdown-->
-                                </ul>
-                            </li>
-                        </ul>
-
-                        <!-- Dropdown -->
                         <li class="nav-item">
                             <a style="position: absolute;text-align: start; right: 20px;color:white" class="nav-link" href="{{ route('login')}}">Log Out</a>
+                        </li>
+                        <li class="nav-item">
+                            <a style="color: white;" class="nav-link" href="{{ route('profile')}}">About Us</a>
                         </li>
                     </ul>
 
@@ -91,42 +45,148 @@
             </div>
         </nav>
     </div>
-    <div>
-        <div class="">
-            @yield('body')
+    <div style="display: flex;" class="container shadow">
+        <div class="border-right" style="flex-basis: 40%;padding-top: 100px;">
+            <h1>Logo</h1>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sed quasi quisquam assumenda corrupti, odit accusamus. Dignissimos placeat tempora quos, voluptatum vel eos quaerat obcaecati nisi nobis animi a ex quasi.</p>
         </div>
-        <div class="container text-center" style="margin-top: 50px;margin-bottom: 100px;">
-            <p style="font-size: 30px;color:black">Convert Files</p>
-            <div class="" style="display: flex;justify-content: center;margin-bottom: 10px;">
-                <div class="mr-3">
-                    <a class="btn btn-light shadow-sm" style="border-radius: 10px;width: 200px; height: 60px;padding-top: 15px;" href="{{route('pdftoword')}}">
-                        <img src="/icons/vnd.openxmlformats-officedocument.wordprocessingml.document.png" style="width: 30px;height: 30px;" alt="">
-                        PDF to Word</a>
-                </div>
-                <div class="mr-3">
-                    <a class="btn btn-light shadow-sm" style="border-radius: 10px;width: 200px; height: 60px;padding-top: 15px;" href="{{route('wordtopdf')}}">
-                        <img src="/icons/pdf.png" style="width: 30px;height: 30px;" alt="">
-                        Word to PDF</a>
-                </div>
-                <div class="mr-3">
-                    <a class="btn btn-light shadow-sm" style="border-radius: 10px;width: 200px; height: 60px;padding-top: 15px;" href="{{route('pdftoppt')}}">
-                        <img src="/icons/vnd.openxmlformats-officedocument.presentationml.presentation.png" style="width: 30px;height: 30px;" alt="">
-                        PDF to PPT</a>
-                </div>
-                <div class="mr-3">
-                    <a class="btn btn-light shadow-sm" style="border-radius: 10px;width: 200px; height: 60px;padding-top: 15px;" href="{{route('ppttopdf')}}">
-                        <img src="/icons/pdf.png" style="width: 30px;height: 30px;" alt="">
-                        PPT to PDF</a>
-                </div>
-                <div class="mr-3">
-                    <a class="btn btn-light shadow-sm" style="border-radius: 10px;width: 200px; height: 60px;padding-top: 15px;" href="{{route('pdftoexcel')}}">
-                        <img src="/icons/vnd.ms-excel.png" style="width: 30px;height: 30px;" alt="">
-                        PDF to Excel</a>
-                </div>
-                <div class="mr-3">
-                    <a class="btn btn-light shadow-sm" style="border-radius: 10px;width: 200px; height: 60px;padding-top: 15px;" href="{{route('exceltopdf')}}">
-                        <img src="/icons/pdf.png" style="width: 30px;height: 30px;" alt="">
-                        Excel to PDF</a>
+        <div style="flex-basis: 60%;">
+            <div style="margin-left: 10px;">
+                <title>Upload file</title>
+                <style>
+                    #drop-area {
+                        margin-top: 100px;
+                        border: 2px dashed #ccc;
+                        padding: 20px;
+                        text-align: center;
+                    }
+
+                    #file-input {
+                        display: none;
+                    }
+
+                    #file-label {
+                        display: block;
+                        margin: 20px auto;
+                        text-align: center;
+                        cursor: pointer;
+                        padding: 10px;
+                        background-color: #2b2d42;
+                        color: white;
+                        border-radius: 5px;
+                        width: 150px;
+                    }
+                </style>
+                <form action="" method="post">
+                    <div id="drop-area">
+                        <h1 id="text">Drag and Drop file here</h1>
+                        <p id="or">or</p>
+                        <label for="file-input" id="file-label">Select File</label>
+                        <input type="file" id="file-input" name="file-input" accept=".pdf,.doc,.docx,.txt" />
+                    </div>
+                </form>
+                <script>
+                    const dropAreaa = document.getElementById('drop-area');
+                    const fileInput = document.getElementById('file-input');
+                    const fileLabel = document.getElementById('file-label');
+
+                    document.getElementById('file-input').addEventListener('change', function() {
+                        var file = this.files[0];
+                        var fileName = file.name;
+                        var filename = fileName.split('.').pop();
+                        if (filename == 'docx') {
+                            $("#1").css({
+                                "pointer-events": "none",
+                                "background-color": "#cccccc"
+                            });
+                        }
+                        // if (file != null) {
+                        //     var myname = document.getElementById('text'); // Tìm phần tử span trong HTML
+                        //     myname.innerHTML = fileName; // Gán giá trị vào phần tử span
+                        // }
+
+                    });
+
+                    // Prevent default drag behaviors
+                    ['dragenter', 'dragover', 'dragleave', 'drop'].forEach(eventName => {
+                        dropAreaa.addEventListener(eventName, preventDefaults, false);
+                        document.body.addEventListener(eventName, preventDefaults, false);
+                    });
+
+                    // Highlight drop area when item is dragged over
+                    ['dragenter', 'dragover'].forEach(eventName => {
+                        dropAreaa.addEventListener(eventName, highlight, false);
+                    });
+
+                    // Unhighlight drop area when item is dragged out
+                    ['dragleave', 'drop'].forEach(eventName => {
+                        dropAreaa.addEventListener(eventName, unhighlight, false);
+                    });
+
+                    // Handle dropped files
+                    dropAreaa.addEventListener('drop', handleDrop, false);
+                    fileInput.addEventListener('change', handleFileSelect, false);
+
+                    function preventDefaults(e) {
+                        e.preventDefault();
+                        e.stopPropagation();
+                    }
+
+                    function highlight(e) {
+                        dropAreaa.classList.add('highlight');
+                    }
+
+                    function unhighlight(e) {
+                        dropAreaa.classList.remove('highlight');
+                    }
+
+                    function handleDrop(e) {
+                        const files = e.dataTransfer.files;
+                        handleFiles(files);
+                    }
+
+                    function handleFileSelect(e) {
+                        const files = e.target.files;
+                        handleFiles(files);
+                    }
+
+                    function handleFiles(files) {
+                        if (files.length > 1) {
+                            alert('Chỉ cho phép tải lên một tệp duy nhất.');
+                            return;
+                        }
+                        const file = files[0];
+                        var fileName = file.name;
+                        if ((fileName.match('.txt')) || (fileName.match('.pdf')) || (fileName.match('.docx'))) {
+                            var myname = document.getElementById('text'); // Tìm phần tử span trong HTML
+                            myname.innerHTML = fileName;
+                        } else {
+                            alert('Chỉ cho phép tải lên các định dạng .pdf, .docx, .txt');
+                        }
+                        // Do something with the file, such as uploading to server
+                        // console.log(file);
+                    }
+                    // xử lí
+                </script>
+            </div>
+            <div style="padding-top: 40px; margin: 20px 0 300px 0;">
+                <p style="color:black;margin-left: 10px;">Convert to</p>
+                <div style="display: flex;justify-content: center;">
+                    <div class="mr-3">
+                        <a id="1" class="btn btn-light shadow-sm" style="border-radius: 10px;width: 200px; height: 60px;padding-top: 15px;" href="">
+                            <img src="/icons/vnd.openxmlformats-officedocument.wordprocessingml.document.png" style="width: 30px;height: 30px;" alt="">
+                            Word</a>
+                    </div>
+                    <div class="mr-3">
+                        <a id="2" class="btn btn-light shadow-sm" style="border-radius: 10px;width: 200px; height: 60px;padding-top: 15px;" href="https://code.jquery.com/jquery-3.6.3.min.js">
+                            <img src="/icons/pdf.png" style="width: 30px;height: 30px;" alt="">
+                            PDF</a>
+                    </div>
+                    <div id="3" class="mr-3">
+                        <a class="btn btn-light shadow-sm" style="border-radius: 10px;width: 200px; height: 60px;padding-top: 15px;" href="">
+                            <img src="/icons/txt.png" style="width: 30px;height: 30px;" alt="">
+                            TXT</a>
+                    </div>
                 </div>
             </div>
         </div>
@@ -207,7 +267,6 @@
     <script src="js/popper.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="js/main.js"></script>
-    <script src="js/scriptss.js"></script>
 </body>
 <footer class="" style="background-color: #333333;">
 

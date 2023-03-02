@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Console\View\Components\Alert;
 use Illuminate\Http\Request;
 
 class ConvertFilesController extends Controller
@@ -11,34 +12,10 @@ class ConvertFilesController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function PDFtoWord()
-    {
-        return view('Page_Convert.PDFtoWord');
-    }
-    public function WordtoPDF()
-    {
-        return view('Page_Convert.WordtoPDF');
-    }
-    public function PDFtoExcel()
-    {
-        return view('Page_Convert.PDFtoExcel');
-    }
-    public function ExceltoPDF()
-    {
-        return view('Page_Convert.ExceltoPDF');
-    }
-    public function PDFtoPPT()
-    {
-        return view('Page_Convert.PDFtoPPT');
-    }
-    public function PPTtoPDF()
-    {
-        return view('Page_Convert.PPTtoPDF');
-    }
-    public function DownLoadFIle()
-    {
-        return view('download_file');
-    }
+    // public function Convert()
+    // {
+    //     return view('Page_Convert.page1');
+    // }
     /**
      * Show the form for creating a new resource.
      *
@@ -47,6 +24,10 @@ class ConvertFilesController extends Controller
     public function create()
     {
         //
+    }
+    public function Convert(Request $request)
+    {
+        return view('main');
     }
 
     /**

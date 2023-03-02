@@ -23,10 +23,6 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/down', function () {
-    return view('download_file');
-});
-
 // account
 Route::get('/', [AccountController::class, 'Login'])->name('login');
 Route::get('/signup', [AccountController::class, 'Signup'])->name('signup');
@@ -35,14 +31,7 @@ Route::get('/profile', [AccountController::class, 'Profile'])->name('profile');
 Route::get('/changepassword', [AccountController::class, 'ChangePass'])->name('change_pass');
 Route::get('/forgotpass', [AccountController::class, 'ForgotPass'])->name('forgotpas');
 
-// download file
-Route::get('/downloadfile', [ConvertFilesController::class, 'DownLoadFIle'])->name('downloadfile');
 // Page convert
-Route::get('/PtoW', [ConvertFilesController::class, 'PDFtoWord'])->name('pdftoword');
-Route::get('/WtoP', [ConvertFilesController::class, 'WordtoPDF'])->name('wordtopdf');
+// Route::get('/main', [ConvertFilesController::class, 'main'])->name('main');
+Route::get('/convert', [ConvertFilesController::class, 'Convert'])->name('convert');
 
-Route::get('/PtoE', [ConvertFilesController::class, 'PDFtoExcel'])->name('pdftoexcel');
-Route::get('/EtoP', [ConvertFilesController::class, 'ExceltoPDF'])->name('exceltopdf');
-
-Route::get('/PtoPP', [ConvertFilesController::class, 'PDFtoPPT'])->name('pdftoppt');
-Route::get('/PPtoP', [ConvertFilesController::class, 'PPTtoPDF'])->name('ppttopdf');
