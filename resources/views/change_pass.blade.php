@@ -26,64 +26,19 @@
     <div>
         <nav class="navbar navbar-expand-lg fixed-top" style="background-color: #333333;">
             <div class="container-fluid">
-                <a class="navbar-brand" href="{{route('pdftoword')}}">
+                <a class="navbar-brand" href="">
                     <img width="40px" height="40px" src="/images/logo.png" alt="">
                 </a>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                         <li class="nav-item">
-                            <a style="color: white;" class="nav-link active" aria-current="page" href="{{ route('pdftoword') }}">Home</a>
+                            <a style="color: white;" class="nav-link active" aria-current="page" href="">Home</a>
                         </li>
                         <li style="margin-left: 34px;" class="nav-item">
                             <a style="color: white;" class="nav-link" href="{{ route('profile')}}">Profile</a>
                         </li>
 
-                        <!-- dropdown -->
-
-                        <ul class="ul">
-                            <li class="li">
-                                <a class="a" style="color:white;" href="#">Convert
-                                    <i style="margin-left: 5px;" class="fa-solid fa-chevron-down"></i>
-                                </a>
-                                <ul style="margin-top: 13px;" class="submenu ul shadow">
-                                    <!-- in dropdown -->
-                                    <div class="" style="display: flex;justify-content: center;margin:40px 0 0 0">
-                                        <div class="mr-3">
-                                            <a class="btn btn-light shadow-sm" style="border-radius: 10px;width: 200px; height: 60px;padding-top: 15px;" href="{{route('pdftoword')}}">
-                                                <img src="/icons/vnd.openxmlformats-officedocument.wordprocessingml.document.png" style="width: 30px;height: 30px;" alt="">
-                                                PDF to Word</a>
-                                        </div>
-                                        <div class="mr-3">
-                                            <a class="btn btn-light shadow-sm" style="border-radius: 10px;width: 200px; height: 60px;padding-top: 15px;" href="{{route('wordtopdf')}}">
-                                                <img src="/icons/pdf.png" style="width: 30px;height: 30px;" alt="">
-                                                Word to PDF</a>
-                                        </div>
-                                        <div class="mr-3">
-                                            <a class="btn btn-light shadow-sm" style="border-radius: 10px;width: 200px; height: 60px;padding-top: 15px;" href="{{route('pdftoppt')}}">
-                                                <img src="/icons/vnd.openxmlformats-officedocument.presentationml.presentation.png" style="width: 30px;height: 30px;" alt="">
-                                                PDF to PPT</a>
-                                        </div>
-                                        <div class="mr-3">
-                                            <a class="btn btn-light shadow-sm" style="border-radius: 10px;width: 200px; height: 60px;padding-top: 15px;" href="{{route('ppttopdf')}}">
-                                                <img src="/icons/pdf.png" style="width: 30px;height: 30px;" alt="">
-                                                PPT to PDF</a>
-                                        </div>
-                                        <div class="mr-3">
-                                            <a class="btn btn-light shadow-sm" style="border-radius: 10px;width: 200px; height: 60px;padding-top: 15px;" href="{{route('pdftoexcel')}}">
-                                                <img src="/icons/vnd.ms-excel.png" style="width: 30px;height: 30px;" alt="">
-                                                PDF to Excel</a>
-                                        </div>
-                                        <div class="mr-3">
-                                            <a class="btn btn-light shadow-sm" style="border-radius: 10px;width: 200px; height: 60px;padding-top: 15px;" href="{{route('exceltopdf')}}">
-                                                <img src="/icons/pdf.png" style="width: 30px;height: 30px;" alt="">
-                                                Excel to PDF</a>
-                                        </div>
-                                    </div>
-                                    <!-- end in dropdown-->
-                                </ul>
-                            </li>
-                        </ul>
-
+                        
                         <!-- Dropdown -->
                         <li class="nav-item">
                             <a style="position: absolute;text-align: start; right: 20px;color:white" class="nav-link" href="{{ route('login')}}">Log Out</a>
