@@ -8,33 +8,36 @@
 </head>
 <body>
     
-    <form id="upload-form" method="POST" enctype="multipart/form-data">
+    <form id="file-upload-form" method="POST" enctype="multipart/form-data">
         @csrf
         <input type="file" name="file">
         <button type="submit">Upload</button>
     </form>
+    
     <script>
-        const form = document.getElementById('upload-form');
-        form.addEventListener('submit', function(event) {
-            event.preventDefault(); // prevent the default form submission behavior
-    
-            // get the form data and create a new FormData object
+        const form = document.querySelector('#file-upload-form');
+        form.addEventListener('submit', async (event) => {
+            event.preventDefault();
+            
             const formData = new FormData(form);
-    
-            // send an AJAX request to the API endpoint
-            fetch('/api/process-file', {
-                method: 'POST',
-                body: formData
-            })
-            .then(response => response.json())
-            .then(data => {
-                // do something with the response data
-                console.log(data);
-            })
-            .catch(error => console.error(error));
+            const url = 'https://ecdc-14-169-248-136.ap.ngrok.io/api/process-file';
+            
+            try {
+                const response = await fetch(url, {
+                    method: 'POST',
+                    body: formData,
+                    // headers: {
+                    //     'Authorization': 'Bearer <token>'
+                    // }
+                });
+                const json = await response.json();
+                console.log(json);
+                
+            } catch (error) {
+                console.error(error);
+            }
         });
     </script>
-    
 </body>
 </html>
 
